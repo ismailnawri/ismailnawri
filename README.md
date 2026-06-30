@@ -1,4 +1,4 @@
-## Hi there 👋, I'm Ismail!
+## Hi there 👋, I'm Ismail Nawri!
 
 I'm an application developer and the founder of **PT Rumah Jasa Media**. I specialize in building SaaS platforms, particularly HRIS and POS solutions, and I am passionate about optimizing business infrastructure. 
 
