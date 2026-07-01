@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismail Nawri | Application Developer & Founder</title>
+    <title>Ismail Nawri | App Developer & Founder</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #0ea5e9;
-            --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --bg-color: #f8fafc; /* Latar belakang sangat terang */
+            --neumorphic-light: #ffffff;
+            --neumorphic-shadow: #e2e8f0;
+            --accent-color: #0ea5e9; /* Biru langit lembut */
+            --accent-glow: #38bdf8;
+            --text-main: #334155;
+            --text-muted: #64748b;
         }
 
         * {
@@ -28,44 +29,71 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 2rem 1rem;
+            padding: 1rem 1rem;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
-            max-width: 850px;
-            margin: 0 auto;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* Neumorphic Button & Card Styling */
+        .neo-base {
+            background: var(--neumorphic-light);
+            border-radius: 20px;
+            box-shadow: 6px 6px 12px var(--neumorphic-shadow), 
+                        -6px -6px 12px #ffffff;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #f1f5f9;
+        }
+
+        .neo-inset {
+            background: var(--neumorphic-light);
+            border-radius: 12px;
+            box-shadow: inset 4px 4px 8px var(--neumorphic-shadow), 
+                        inset -4px -4px 8px #ffffff;
         }
 
         /* Hero Section */
         header {
             text-align: center;
-            padding: 3rem 1rem;
-            margin-bottom: 2rem;
+            padding: 2rem 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .profile-badge {
-            background: rgba(14, 165, 233, 0.1);
-            color: var(--accent-color);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
+        .profile-neo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 1rem;
-            border: 1px solid rgba(14, 165, 233, 0.2);
+            border: 5px solid var(--neumorphic-light);
+            box-shadow: 4px 4px 10px var(--neumorphic-shadow), 
+                        -4px -4px 10px #ffffff;
+            overflow: hidden;
+        }
+
+        .profile-neo img {
+            width: 90%;
+            border-radius: 50%;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.25rem;
+            color: var(--text-main);
         }
 
         header .tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
@@ -77,37 +105,32 @@
             gap: 1rem;
         }
 
-        .btn-social {
+        .btn-social-neo {
             color: var(--text-main);
-            background: var(--card-bg);
-            border: 1px solid #334155;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
+            padding: 0.7rem 1.4rem;
+            border-radius: 12px;
             text-decoration: none;
             font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            transition: all 0.3s ease;
+            font-weight: 600;
         }
 
-        .btn-social:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-2px);
-            background: rgba(14, 165, 233, 0.05);
+        .btn-social-neo:hover {
+            box-shadow: 2px 2px 5px var(--neumorphic-shadow), 
+                        -2px -2px 5px #ffffff;
+            transform: translateY(-1px);
         }
 
         /* Section Styling */
         section {
-            background: var(--card-bg);
-            border: 1px solid #334155;
-            padding: 2rem;
-            border-radius: 16px;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         section h2 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
@@ -130,113 +153,171 @@
             .project-grid { grid-template-columns: 1fr; }
         }
 
-        .project-card {
-            background: rgba(15, 23, 42, 0.4);
-            border: 1px solid #334155;
+        .project-card-neo {
             padding: 1.25rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
         }
 
-        .project-card:hover {
-            border-color: #475569;
-            transform: scale(1.01);
-        }
-
-        .project-card h3 {
+        .project-card-neo h3 {
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             color: var(--text-main);
         }
 
-        .project-card p {
-            font-size: 0.9rem;
+        .project-card-neo p {
+            font-size: 0.85rem;
             color: var(--text-muted);
+            margin-bottom: 1rem;
         }
 
-        /* Tech Stack Badges */
+        /* Tech Tags */
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-top: 1rem;
         }
 
-        .tag {
-            background: #334155;
-            color: #e2e8f0;
-            padding: 0.3rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
+        .tag-neo {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.3rem 0.7rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
             font-weight: 500;
+        }
+
+        /* Tech Stack with 3D Icons */
+        .stack-grid-neo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+        }
+
+        .stack-item-neo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .stack-item-neo:hover {
+            box-shadow: 2px 2px 6px var(--neumorphic-shadow), 
+                        -2px -2px 6px #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .stack-icon-3d {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Gradient glow effect for 3D simulation */
+            background: linear-gradient(135deg, var(--accent-glow) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Soft blur glow */
+            filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.4));
+        }
+
+        /* Specific glows for different icons if desired */
+        .icon-flutter { filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6)); }
+        .icon-ai { filter: drop-shadow(0 0 10px rgba(251, 146, 60, 0.5)); background: linear-gradient(135deg, #fb923c 0%, #f97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .stack-item-neo span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <span class="profile-badge">🚀 Available for Collaboration</span>
-            <h1>Muhammad Ismail Nawri Nasution</h1>
-            <p class="tagline">Application Developer & Founder of PT Rumah Jasa Media</p>
+        <header class="neo-base" style="border-radius: 30px;">
+            <div class="profile-neo">
+                <img src="https://ismailnawri.github.io/ismailnawri/avatar.png" alt="Ismail Nawri Avatar" onerror="this.src='https://raw.githubusercontent.com/ismailnawri/ismailnawri/main/avatar.png';">
+            </div>
+            <h1>ISMAIL NAWRI</h1>
+            <p class="tagline">App Developer & Founder, PT Rumah Jasa Media</p>
             
             <div class="social-links">
-                <a href="https://instagram.com/izmailnawri" target="_blank" class="btn-social">
-                    <i class="fab fa-instagram"></i> Instagram
+                <a href="https://instagram.com/izmailnawri" target="_blank" class="btn-social-neo neo-base">
+                    <i class="fab fa-instagram" style="color: #e4405f;"></i> Instagram
                 </a>
-                <a href="https://github.com/ismailnawri" target="_blank" class="btn-social">
+                <a href="https://github.com/ismailnawri" target="_blank" class="btn-social-neo neo-base">
                     <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
         </header>
 
-        <section>
-            <h2><i class="fas fa-user"></i> Tentang Saya</h2>
-            <p style="color: var(--text-muted);">
-                Saya adalah seorang pengembang aplikasi yang berfokus pada pembangunan platform SaaS, khususnya infrastruktur bisnis seperti sistem HRIS dan POS. Saat ini juga aktif mengabdi sebagai Programmer di Universitas Aisyiyah Yogyakarta (UNISA).
-            </p>
+        <section class="neo-base">
+            <h2><i class="fas fa-id-badge"></i> Tentang Saya</h2>
+            <div class="neo-inset" style="padding: 1rem;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    Ismail Nawri juga fokus pada solusi SaaS, membangun platform SaaS yang sudah ada, serta pengembangan aplikasi yang mencakup integrasi neumorphic. Saat ini juga aktif sebagai programmer di Universitas Aisyiyah Yogyakarta (UNISA).
+                </p>
+            </div>
         </section>
 
-        <section>
-            <h2><i class="fas fa-laptop-code"></i> Proyek Utama</h2>
+        <section class="neo-base">
+            <h2><i class="fas fa-rocket"></i> Proyek Utama</h2>
             <div class="project-grid">
-                <div class="project-card">
+                <div class="project-card-neo neo-base neo-inset">
                     <h3>Handoo</h3>
-                    <p>Platform HRIS modern berskala besar. Dibangun menggunakan Flutter untuk performa mobile yang maksimal serta integrasi payment gateway otomatis dari Duitku.</p>
+                    <p>Platform HRIS modern. Versi mobile menggunakan Flutter dengan integrasi payment gateway otomatis Duitku.</p>
                     <div class="tech-tags">
-                        <span class="tag">Flutter</span>
-                        <span class="tag">Duitku API</span>
+                        <span class="tag-neo">SaaS</span>
+                        <span class="tag-neo">Mobile App</span>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card-neo neo-base neo-inset">
                     <h3>PT Rumah Jasa Media</h3>
-                    <p>Perusahaan berbadan hukum yang saya dirikan untuk mengoptimalkan efisiensi infrastruktur bisnis digital dan penyediaan solusi software.</p>
+                    <p>Perusahaan SaaS modern yang didirikan untuk solusi software dan infrastruktur bisnis.</p>
                     <div class="tech-tags">
-                        <span class="tag">SaaS</span>
-                        <span class="tag">Infrastruktur</span>
+                        <span class="tag-neo">SaaS</span>
+                        <span class="tag-neo">Infrastruktur</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2><i class="fas fa-tools"></i> Keahlian & Teknologi</h2>
-            <p style="color: var(--text-muted); margin-bottom: 1rem;">Teknologi dan tools yang biasa saya gunakan untuk menangani arsitektur sistem kompleks:</p>
-            <div class="tech-tags">
-                <span class="tag"><i class="fab fa-php"></i> PHP</span>
-                <span class="tag"><i class="fas fa-mobile-alt"></i> Flutter / Dart</span>
-                <span class="tag"><i class="fas fa-database"></i> MySQL</span>
-                <span class="tag"><i class="fas fa-network-wired"></i> RESTful API</span>
-                <span class="tag"><i class="fas fa-server"></i> Server Management</span>
-                <span class="tag"><i class="fas fa-robot"></i> AI Integrations (Groq/Llama)</span>
+        <section class="neo-base">
+            <h2><i class="fas fa-layer-group"></i> Tech Stack & Keahlian</h2>
+            <div class="stack-grid-neo">
+                <div class="stack-item-neo neo-base">
+                    <div class="stack-icon-3d"><i class="fab fa-php"></i></div>
+                    <span>PHP</span>
+                </div>
+                <div class="stack-item-neo neo-base">
+                    <div class="stack-icon-3d icon-flutter"><i class="fas fa-mobile-alt"></i></div>
+                    <span>Flutter</span>
+                </div>
+                <div class="stack-item-neo neo-base">
+                    <div class="stack-icon-3d"><i class="fas fa-database"></i></div>
+                    <span>MySQL</span>
+                </div>
+                <div class="stack-item-neo neo-base">
+                    <div class="stack-icon-3d"><i class="fas fa-network-wired"></i></div>
+                    <span>REST API</span>
+                </div>
+                <div class="stack-item-neo neo-base">
+                    <div class="stack-icon-3d icon-ai"><i class="fas fa-brain"></i></div>
+                    <span>AI Integration</span>
+                </div>
+                <div class="stack-item-neo neo-base">
+                    <div class="stack-icon-3d"><i class="fas fa-server"></i></div>
+                    <span>Server Mgmt</span>
+                </div>
             </div>
         </section>
 
